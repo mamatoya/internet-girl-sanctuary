@@ -1,0 +1,194 @@
+/* Y2K Theme System for Internet Girl's Learning Sanctuary */
+
+/* ═══════════════════════════════════════════════════════════════
+   CYBER DREAM - Electric blue, hot pink, black
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="cyber-dream"] {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a2e;
+  --bg-hover: #252540;
+
+  --text-primary: #e0e0ff;
+  --text-secondary: #9090b0;
+  --text-muted: #606080;
+
+  --accent-1: #00f0ff; /* electric cyan */
+  --accent-2: #ff00aa; /* hot pink */
+  --accent-3: #7b2fff; /* purple */
+  --accent-4: #00ff88; /* neon green */
+
+  --border-color: #2a2a4a;
+  --border-glow: 0 0 10px rgba(0, 240, 255, 0.3);
+
+  --ascii-border: "═";
+  --ascii-corner: "╔╗╚╝";
+
+  --font-display: 'VT323', 'Courier New', monospace;
+  --font-body: 'Space Mono', 'Courier New', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PASTEL CLOUD - Soft lavender, mint, cream
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="pastel-cloud"] {
+  --bg-primary: #faf8ff;
+  --bg-secondary: #f0ebff;
+  --bg-card: #ffffff;
+  --bg-hover: #e8e0ff;
+
+  --text-primary: #4a4a6a;
+  --text-secondary: #7a7a9a;
+  --text-muted: #a0a0b0;
+
+  --accent-1: #b8a9e8; /* lavender */
+  --accent-2: #98e4c9; /* mint */
+  --accent-3: #f8b4d9; /* pink */
+  --accent-4: #ffd4a3; /* peach */
+
+  --border-color: #e0d8f0;
+  --border-glow: 0 2px 8px rgba(184, 169, 232, 0.2);
+
+  --ascii-border: "~";
+  --ascii-corner: ".::.";
+
+  --font-display: 'Quicksand', 'Comic Sans MS', sans-serif;
+  --font-body: 'Nunito', 'Arial', sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Y2K GRUNGE - Orange, brown, olive, cream
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="y2k-grunge"] {
+  --bg-primary: #1a1814;
+  --bg-secondary: #252218;
+  --bg-card: #2d2920;
+  --bg-hover: #3a3428;
+
+  --text-primary: #f0e8d8;
+  --text-secondary: #c0b8a0;
+  --text-muted: #888068;
+
+  --accent-1: #ff6b35; /* burnt orange */
+  --accent-2: #8b9a46; /* olive */
+  --accent-3: #d4a574; /* tan */
+  --accent-4: #c44536; /* rust */
+
+  --border-color: #4a4438;
+  --border-glow: 0 0 8px rgba(255, 107, 53, 0.2);
+
+  --ascii-border: "-";
+  --ascii-corner: "++++";
+
+  --font-display: 'Rubik Mono One', 'Impact', sans-serif;
+  --font-body: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DIGITAL SUNSET - Purple gradient, coral, gold
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="digital-sunset"] {
+  --bg-primary: #1a0a2e;
+  --bg-secondary: #2a1040;
+  --bg-card: #3a1850;
+  --bg-hover: #4a2060;
+
+  --text-primary: #fff0f8;
+  --text-secondary: #d0b0c8;
+  --text-muted: #907888;
+
+  --accent-1: #ff6b6b; /* coral */
+  --accent-2: #ffd93d; /* gold */
+  --accent-3: #c44be0; /* magenta */
+  --accent-4: #4ecdc4; /* teal */
+
+  --border-color: #5a2870;
+  --border-glow: 0 0 15px rgba(255, 107, 107, 0.3);
+
+  --ascii-border: "*";
+  --ascii-corner: "o o o o";
+
+  --font-display: 'Righteous', 'Arial Black', sans-serif;
+  --font-body: 'Outfit', 'Helvetica', sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MATRIX MODE - Green on black, terminal vibes
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="matrix-mode"] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0f0a;
+  --bg-card: #0f1a0f;
+  --bg-hover: #152015;
+
+  --text-primary: #00ff00;
+  --text-secondary: #00cc00;
+  --text-muted: #007700;
+
+  --accent-1: #00ff00; /* matrix green */
+  --accent-2: #00ffaa; /* bright cyan-green */
+  --accent-3: #88ff00; /* lime */
+  --accent-4: #ffffff; /* white flash */
+
+  --border-color: #003300;
+  --border-glow: 0 0 10px rgba(0, 255, 0, 0.4);
+
+  --ascii-border: "|";
+  --ascii-corner: "[][]";
+
+  --font-display: 'Share Tech Mono', 'Courier New', monospace;
+  --font-body: 'Fira Code', 'Courier New', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUBBLEGUM POP - Pink, baby blue, white
+   ═══════════════════════════════════════════════════════════════ */
+[data-theme="bubblegum-pop"] {
+  --bg-primary: #fff5f8;
+  --bg-secondary: #ffe8f0;
+  --bg-card: #ffffff;
+  --bg-hover: #ffd0e8;
+
+  --text-primary: #5a2d5a;
+  --text-secondary: #8a5a8a;
+  --text-muted: #b090b0;
+
+  --accent-1: #ff69b4; /* hot pink */
+  --accent-2: #87ceeb; /* sky blue */
+  --accent-3: #dda0dd; /* plum */
+  --accent-4: #98fb98; /* pale green */
+
+  --border-color: #ffc0e0;
+  --border-glow: 0 3px 12px rgba(255, 105, 180, 0.25);
+
+  --ascii-border: "~";
+  --ascii-corner: "<3<3";
+
+  --font-display: 'Fredoka One', 'Comic Sans MS', sans-serif;
+  --font-body: 'Nunito', 'Trebuchet MS', sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SHARED THEME STYLES
+   ═══════════════════════════════════════════════════════════════ */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme transition for smooth switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ASCII Box styling */
+.ascii-box {
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  box-shadow: var(--border-glow);
+}
+
+.ascii-box::before {
+  content: var(--ascii-corner);
+}

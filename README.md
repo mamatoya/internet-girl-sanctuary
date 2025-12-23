@@ -57,31 +57,6 @@ A Y2K-inspired personal curriculum tracker built in a single Claude Code session
 
 ---
 
-## SWOT Analysis
-
-### Strengths
-- Full-stack app with auth in ~1.5 hours
-- Clean architecture (Zustand + Supabase)
-- User-centered iteration mid-session
-- Security by default (RLS policies)
-
-### Weaknesses
-- No offline-first sync
-- Limited automated tests
-- Google OAuth not configured
-
-### Opportunities
-- Add Google/GitHub OAuth
-- PWA for offline support
-- Spaced repetition system
-- Mobile app (React Native)
-
-### Threats
-- Supabase free tier limits (50K MAU)
-- Data lock-in without export feature
-
----
-
 ## Key Decisions
 
 | Decision | Rationale |

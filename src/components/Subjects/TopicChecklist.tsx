@@ -52,7 +52,12 @@ export function TopicChecklist({ topics, subjectId }: TopicChecklistProps) {
                 resources:
               </div>
               {topic.resources.map((resource) => (
-                <ResourceLink key={resource.id} resource={resource} />
+                <ResourceLink
+                  key={resource.id}
+                  resource={resource}
+                  subjectId={subjectId}
+                  topicId={topic.id}
+                />
               ))}
             </div>
           )}

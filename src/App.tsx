@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import { useStore } from './store/useStore';
+import { AuthProvider, useAuth } from './lib/auth';
+import { useSync } from './lib/useSync';
+import { AuthScreen } from './components/Auth/AuthScreen';
 import { Sidebar } from './components/Layout/Sidebar';
 import { DailyDashboard } from './components/Dashboard/DailyDashboard';
 import { FocusSession } from './components/Dashboard/FocusSession';
@@ -8,8 +11,12 @@ import { JournalEntry } from './components/Progress/JournalEntry';
 import { JournalList } from './components/Progress/JournalList';
 import './themes.css';
 
-function App() {
+function AppContent() {
+  const { user, loading, signOut } = useAuth();
   const { theme, activeView, subjects, session, updateCreature } = useStore();
+
+  // Sync with Supabase
+  useSync();
 
   // Apply theme to document
   useEffect(() => {
@@ -20,6 +27,30 @@ function App() {
   useEffect(() => {
     updateCreature();
   }, [updateCreature]);
+
+  // Show loading
+  if (loading) {
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'var(--bg-primary)',
+        }}
+      >
+        <div style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-display)' }}>
+          loading...
+        </div>
+      </div>
+    );
+  }
+
+  // Show auth screen if not logged in
+  if (!user) {
+    return <AuthScreen />;
+  }
 
   const renderContent = () => {
     // Focus mode takes over everything
@@ -107,6 +138,25 @@ function App() {
       }}
     >
       <Sidebar />
+      {/* Sign out button */}
+      <button
+        onClick={signOut}
+        style={{
+          position: 'fixed',
+          top: '1rem',
+          right: '1rem',
+          background: 'none',
+          border: '1px solid var(--border-color)',
+          color: 'var(--text-muted)',
+          padding: '0.5rem 1rem',
+          cursor: 'pointer',
+          fontFamily: 'var(--font-display)',
+          fontSize: '0.8rem',
+          zIndex: 100,
+        }}
+      >
+        sign out
+      </button>
       <main
         style={{
           marginLeft: '20px', // Small margin for collapsed sidebar button
@@ -115,6 +165,14 @@ function App() {
         {renderContent()}
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

@@ -110,6 +110,61 @@ export const useStore = create<AppState>()(
         });
         get().updateStreak();
       },
+      updateResource: (subjectId, topicId, resourceId, updates) => {
+        const state = get();
+        const newSubjects = state.subjects.map((subject) => {
+          if (subject.id !== subjectId) return subject;
+          return {
+            ...subject,
+            topics: subject.topics.map((topic) => {
+              if (topic.id !== topicId) return topic;
+              return {
+                ...topic,
+                resources: topic.resources.map((resource) => {
+                  if (resource.id !== resourceId) return resource;
+                  return { ...resource, ...updates };
+                }),
+              };
+            }),
+          };
+        });
+        set({ subjects: newSubjects });
+      },
+      addResource: (subjectId, topicId, resource) => {
+        const state = get();
+        const newResource = { ...resource, id: generateId() };
+        const newSubjects = state.subjects.map((subject) => {
+          if (subject.id !== subjectId) return subject;
+          return {
+            ...subject,
+            topics: subject.topics.map((topic) => {
+              if (topic.id !== topicId) return topic;
+              return {
+                ...topic,
+                resources: [...topic.resources, newResource],
+              };
+            }),
+          };
+        });
+        set({ subjects: newSubjects });
+      },
+      deleteResource: (subjectId, topicId, resourceId) => {
+        const state = get();
+        const newSubjects = state.subjects.map((subject) => {
+          if (subject.id !== subjectId) return subject;
+          return {
+            ...subject,
+            topics: subject.topics.map((topic) => {
+              if (topic.id !== topicId) return topic;
+              return {
+                ...topic,
+                resources: topic.resources.filter((r) => r.id !== resourceId),
+              };
+            }),
+          };
+        });
+        set({ subjects: newSubjects });
+      },
 
       // Progress
       progress: initialProgress,

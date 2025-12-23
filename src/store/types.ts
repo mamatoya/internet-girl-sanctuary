@@ -88,6 +88,22 @@ export interface AppState {
   // Subjects
   subjects: Subject[];
   toggleTopicComplete: (subjectId: SubjectId, topicId: string) => void;
+  updateResource: (
+    subjectId: SubjectId,
+    topicId: string,
+    resourceId: string,
+    updates: Partial<Pick<Resource, 'title' | 'url'>>
+  ) => void;
+  addResource: (
+    subjectId: SubjectId,
+    topicId: string,
+    resource: Omit<Resource, 'id'>
+  ) => void;
+  deleteResource: (
+    subjectId: SubjectId,
+    topicId: string,
+    resourceId: string
+  ) => void;
 
   // Progress
   progress: UserProgress;
